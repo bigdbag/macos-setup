@@ -1,6 +1,20 @@
+# This script installs commonly used dev tools:
+# x-code command line tools, Homebrew
+# Node, nvm, ruby, rbenv
+# gitflow, git-lfs, git-extras, git-autocomplete
+# Chrome, Firefox, Slack, VirtualBox, VSCode, Alfred, iTerm2, OpenJDK, Java, Docker
+# ElasticSearch, Postresql, Redis, MySQL
+# python3, pip, virtualenv with a default python3 env called 'p3'
+# AWS-CLI
+#
+# Automatic addition of Slack, VSCode, iTerm2, and Chrome to the MacOS dock
+#
+# Optional font tooling, imagemagick, and commonly used python packages are commented out.  
+
 #!/usr/bin/env bash
 
 # Install command-line tools using Homebrew.
+xcode-select --install
 
 # Ask for the administrator password upfront.
 sudo -K
@@ -50,10 +64,10 @@ nvm install-latest-npm
 echo "------------------------------"
 echo "Installing font tools"
 
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
+# brew tap bramstein/webfonttools
+# brew install sfnt2woff
+# brew install sfnt2woff-zopfli
+# brew install woff2
 
 echo "------------------------------"
 echo "Installing git/git-lfs/git-flow/git-extras"
@@ -65,7 +79,7 @@ brew install git-extras
 echo "------------------------------"
 echo "Installing imagemagick"
 
-brew install imagemagick
+# brew install imagemagick
 
 echo "------------------------------"
 echo "Installing casks"
@@ -131,27 +145,6 @@ echo "export WORKON_HOME=~/.virtualenvs" >> $EXTRA_PATH
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> $EXTRA_PATH
 echo "" >> $BASH_PROFILE_PATH
 source $EXTRA_PATH
-
-echo "------------------------------"
-echo "Setting up p2 virtual environment."
-
-# Create a Python2 data environment
-mkvirtualenv p2
-# workon p2
-
-# # Install Python data modules
-# sudo pip install numpy
-# sudo pip install scipy
-# sudo pip install matplotlib
-# sudo pip install pandas
-# sudo pip install sympy
-# sudo pip install nose
-# sudo pip install unittest2
-# sudo pip install seaborn
-# sudo pip install scikit-learn
-# sudo pip install "ipython[all]"
-# sudo pip install bokeh
-# sudo pip install Flask
 
 echo "------------------------------"
 echo "Setting up p3 virtual environment."
