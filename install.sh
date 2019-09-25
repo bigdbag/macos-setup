@@ -54,8 +54,6 @@ grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 echo "------------------------------"
 echo "Installing node and npm"
 
-brew install node
-
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 export NVM_DIR="$HOME/.nvm"
