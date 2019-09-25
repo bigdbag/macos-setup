@@ -137,86 +137,52 @@ echo "Setting up p2 virtual environment."
 
 # Create a Python2 data environment
 mkvirtualenv p2
-workon p2
+# workon p2
 
-# Install Python data modules
-sudo pip install numpy
-sudo pip install scipy
-sudo pip install matplotlib
-sudo pip install pandas
-sudo pip install sympy
-sudo pip install nose
-sudo pip install unittest2
-sudo pip install seaborn
-sudo pip install scikit-learn
-sudo pip install "ipython[all]"
-sudo pip install bokeh
-sudo pip install Flask
+# # Install Python data modules
+# sudo pip install numpy
+# sudo pip install scipy
+# sudo pip install matplotlib
+# sudo pip install pandas
+# sudo pip install sympy
+# sudo pip install nose
+# sudo pip install unittest2
+# sudo pip install seaborn
+# sudo pip install scikit-learn
+# sudo pip install "ipython[all]"
+# sudo pip install bokeh
+# sudo pip install Flask
 
 echo "------------------------------"
 echo "Setting up p3 virtual environment."
 
 # Create a Python3 data environment
 mkvirtualenv --python=/usr/local/bin/python3 p3
-workon p3
+# workon p3
 
-# Install Python data modules
-sudo pip install numpy
-sudo pip install scipy
-sudo pip install matplotlib
-sudo pip install pandas
-sudo pip install sympy
-sudo pip install nose
-sudo pip install unittest2
-sudo pip install seaborn
-sudo pip install scikit-learn
-sudo pip install "ipython[all]"
-sudo pip install bokeh
-sudo pip install Flask
-
-echo "------------------------------"
-echo "Setting up AWS"
+# # Install Python data modules
+# sudo pip install numpy
+# sudo pip install scipy
+# sudo pip install matplotlib
+# sudo pip install pandas
+# sudo pip install sympy
+# sudo pip install nose
+# sudo pip install unittest2
+# sudo pip install seaborn
+# sudo pip install scikit-learn
+# sudo pip install "ipython[all]"
+# sudo pip install bokeh
+# sudo pip install Flask
 
 echo "------------------------------"
-echo "Source virtualenvwrapper from ~/.extra"
-source ~/.extra
+echo "Setting up AWS-CLI"
 
-echo "------------------------------"
-echo "Updating p2 virtual environment with AWS modules."
+pip3 install awscli --upgrade --user
 
-# Create a Python2 data environment
-# If this environment already exists from running pydata.sh,
-# it will not be overwritten
-mkvirtualenv p2
-workon p2
-
-sudo pip install boto
-sudo pip install awscli
-sudo pip install mrjob
-sudo pip install s3cmd
-
-EXTRA_PATH=~/.extra
-echo $EXTRA_PATH
-echo "" >> $EXTRA_PATH
-echo "" >> $EXTRA_PATH
-echo "# Configure aws cli autocomplete, added by aws.sh" >> $EXTRA_PATH
-echo "complete -C '~/.virtualenvs/py2-data/bin/aws_completer' aws" >> $EXTRA_PATH
-source $EXTRA_PATH
-
-echo "------------------------------"
-echo "Updating p3 virtual environment with AWS modules."
-
-# Create a Python3 data environment
-# If this environment already exists from running pydata.sh,
-# it will not be overwritten
-mkvirtualenv --python=/usr/local/bin/python3 p3
-workon p3
-
-sudo pip install boto
-sudo pip install awscli
-
+# git autocompletion
 echo '[ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash' >>~/.bash_profile
 
+# add icons to MacOS dock
 brew install dockutil
 
 dockutil --add /Applications/Chrome.app
