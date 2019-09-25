@@ -167,15 +167,8 @@ pip install "ipython[all]"
 pip install bokeh
 pip install Flask
 
-
-###############################################################################
-# AWS                                                                         #
-###############################################################################
-
 echo "------------------------------"
-echo "Setting up AWS."
-echo "This script requires pip and virtualenvwrapper to be installed."
-echo "See the pydata.sh script."
+echo "Setting up AWS"
 
 echo "------------------------------"
 echo "Source virtualenvwrapper from ~/.extra"
