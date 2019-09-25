@@ -101,7 +101,7 @@ echo "------------------------------"
 echo "Setting up pip."
 
 # Install pip
-easy_install pip
+sudo easy_install pip
 
 echo "------------------------------"
 echo "Setting up virtual environments."
