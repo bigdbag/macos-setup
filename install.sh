@@ -109,8 +109,8 @@ echo "Setting up virtual environments."
 # Install virtual environments globally
 # It fails to install virtualenv if PIP_REQUIRE_VIRTUALENV was true
 export PIP_REQUIRE_VIRTUALENV=false
-pip install virtualenv
-pip install virtualenvwrapper
+sudo pip install virtualenv
+sudo pip install virtualenvwrapper
 
 echo "------------------------------"
 echo "Source virtualenvwrapper from ~/.extra"
@@ -133,18 +133,18 @@ mkvirtualenv p2
 workon p2
 
 # Install Python data modules
-pip install numpy
-pip install scipy
-pip install matplotlib
-pip install pandas
-pip install sympy
-pip install nose
-pip install unittest2
-pip install seaborn
-pip install scikit-learn
-pip install "ipython[all]"
-pip install bokeh
-pip install Flask
+sudo pip install numpy
+sudo pip install scipy
+sudo pip install matplotlib
+sudo pip install pandas
+sudo pip install sympy
+sudo pip install nose
+sudo pip install unittest2
+sudo pip install seaborn
+sudo pip install scikit-learn
+sudo pip install "ipython[all]"
+sudo pip install bokeh
+sudo pip install Flask
 
 echo "------------------------------"
 echo "Setting up p3 virtual environment."
@@ -154,18 +154,18 @@ mkvirtualenv --python=/usr/local/bin/python3 p3
 workon p3
 
 # Install Python data modules
-pip install numpy
-pip install scipy
-pip install matplotlib
-pip install pandas
-pip install sympy
-pip install nose
-pip install unittest2
-pip install seaborn
-pip install scikit-learn
-pip install "ipython[all]"
-pip install bokeh
-pip install Flask
+sudo pip install numpy
+sudo pip install scipy
+sudo pip install matplotlib
+sudo pip install pandas
+sudo pip install sympy
+sudo pip install nose
+sudo pip install unittest2
+sudo pip install seaborn
+sudo pip install scikit-learn
+sudo pip install "ipython[all]"
+sudo pip install bokeh
+sudo pip install Flask
 
 echo "------------------------------"
 echo "Setting up AWS"
@@ -183,10 +183,10 @@ echo "Updating p2 virtual environment with AWS modules."
 mkvirtualenv p2
 workon p2
 
-pip install boto
-pip install awscli
-pip install mrjob
-pip install s3cmd
+sudo pip install boto
+sudo pip install awscli
+sudo pip install mrjob
+sudo pip install s3cmd
 
 EXTRA_PATH=~/.extra
 echo $EXTRA_PATH
@@ -205,8 +205,8 @@ echo "Updating p3 virtual environment with AWS modules."
 mkvirtualenv --python=/usr/local/bin/python3 p3
 workon p3
 
-pip install boto
-pip install awscli
+sudo pip install boto
+sudo pip install awscli
 
 echo '[ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash' >>~/.bash_profile
 
