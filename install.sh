@@ -3,7 +3,7 @@
 # Install command-line tools using Homebrew.
 
 # Ask for the administrator password upfront.
-sudo -v
+sudo -K
 
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -67,6 +67,7 @@ echo "Installing casks"
 brew cask install --appdir="/Applications" alfred
 brew cask install --appdir="~/Applications" iterm2
 brew cask install --appdir="~/Applications" java
+brew cask install homebrew/cask-versions/adoptopenjdk8
 
 # Development tool casks
 brew cask install --appdir="/Applications" visual-studio-code
@@ -90,7 +91,6 @@ echo "Installing data stores"
 # Install data stores
 brew install mysql
 brew install postgresql
-brew install mongo
 brew install redis
 brew install elasticsearch
 
@@ -209,4 +209,12 @@ pip install boto
 pip install awscli
 
 echo '[ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash' >>~/.bash_profile
+
+brew install dockutil
+
+dockutil --add /Applications/Chrome.app
+dockutil --add /Applications/iTerm.app
+dockutil --add '/Applications/Visual Studio Code.app'
+dockutil --add /Applications/Slack.app
+
 
