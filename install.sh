@@ -58,7 +58,7 @@ brew install git-extras
 echo "------------------------------"
 echo "Installing imagemagick"
 
-brew install imagemagick --with-webp
+brew install imagemagick
 
 echo "------------------------------"
 echo "Installing casks"
