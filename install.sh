@@ -4,7 +4,7 @@
 # gitflow, git-lfs, git-extras, git-autocomplete
 # Chrome, Firefox, Slack, VirtualBox, VSCode, Alfred, iTerm2, OpenJDK, Java, Docker
 # ElasticSearch, Postresql, Redis, MySQL
-# python3, pip, virtualenv with a default python3 env called 'p3'
+# python3, pip
 # AWS-CLI
 #
 # Automatic addition of Slack, VSCode, iTerm2, and Chrome to the MacOS dock
@@ -124,48 +124,19 @@ echo "Setting up pip."
 # Install pip
 sudo easy_install pip
 
-echo "------------------------------"
-echo "Setting up virtual environments."
-
-# Install virtual environments globally
-# It fails to install virtualenv if PIP_REQUIRE_VIRTUALENV was true
-export PIP_REQUIRE_VIRTUALENV=false
-sudo pip install virtualenv
-sudo pip install virtualenvwrapper
-
-echo "------------------------------"
-echo "Source virtualenvwrapper from ~/.extra"
-
-EXTRA_PATH=~/.extra
-echo $EXTRA_PATH
-echo "" >> $EXTRA_PATH
-echo "" >> $EXTRA_PATH
-echo "# Source virtualenvwrapper, added by pydata.sh" >> $EXTRA_PATH
-echo "export WORKON_HOME=~/.virtualenvs" >> $EXTRA_PATH
-echo "source /usr/local/bin/virtualenvwrapper.sh" >> $EXTRA_PATH
-echo "" >> $BASH_PROFILE_PATH
-source $EXTRA_PATH
-
-echo "------------------------------"
-echo "Setting up p3 virtual environment."
-
-# Create a Python3 data environment
-mkvirtualenv --python=/usr/local/bin/python3 p3
-# workon p3
-
 # # Install Python data modules
-# sudo pip install numpy
-# sudo pip install scipy
-# sudo pip install matplotlib
-# sudo pip install pandas
-# sudo pip install sympy
-# sudo pip install nose
-# sudo pip install unittest2
-# sudo pip install seaborn
-# sudo pip install scikit-learn
-# sudo pip install "ipython[all]"
-# sudo pip install bokeh
-# sudo pip install Flask
+# sudo pip3 install numpy
+# sudo pip3 install scipy
+# sudo pip3 install matplotlib
+# sudo pip3 install pandas
+# sudo pip3 install sympy
+# sudo pip3 install nose
+# sudo pip3 install unittest2
+# sudo pip3 install seaborn
+# sudo pip3 install scikit-learn
+# sudo pip3 install "ipython[all]"
+# sudo pip3 install bokeh
+# sudo pip3 install Flask
 
 echo "------------------------------"
 echo "Setting up AWS-CLI"
