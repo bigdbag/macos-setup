@@ -10,6 +10,8 @@
 # Automatic addition of Slack, VSCode, iTerm2, and Chrome to the MacOS dock
 #
 # Optional font tooling, imagemagick, and commonly used python packages are commented out.  
+#
+# Borrowed most of it from https://github.com/donnemartin/dev-setup
 
 #!/usr/bin/env bash
 
